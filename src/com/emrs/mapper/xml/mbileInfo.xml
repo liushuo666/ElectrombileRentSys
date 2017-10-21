@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.emrs.dao.MbileInfoDao">
+	<resultMap type="MbileInfo" id="mbileInfo">
+		<id column="mbile_id" property="mbile_id" />
+		<result column="mbile_number" property="mbile_number" />
+		<result column="brand" property="brand" />
+		<result column="start_time" property="start_time" />
+		<result column="is_rent" property="is_rent" />
+		<result column="is_break" property="is_break" />
+	</resultMap>
+	
+	<select id="queryAllInfos"  resultMap="mbileInfo">
+		select mbile_id,mbile_number,brand,start_time,is_rent,is_break from t_mbileInfo 
+	</select>
+</mapper>
